@@ -75,8 +75,20 @@ body{
     color: #999;
     margin: -4px 0 -8px;
 }
+.container.active .info{
+    display: none;
+}
+.info span{
+    font-weight: 500;
+}
 .container ul{
-    display: none
+    height: 0;
+    overflow: hidden;
+    transition:all 0.3s ease;
+}
+.container.active ul{
+    height: 300px;
+    opacity: 1;
 }
 .container ul li{
     display: flex;
@@ -86,13 +98,20 @@ body{
     margin-bottom: 14px;
     border-bottom: 1px solid #ccc;
 }
+ul .content{
+    max-height: 215px;
+    overflow-y: auto;
+}
+ul .content::-webkit-scrollbar{
+    width: 0px;
+}
 ul li:last-child{
     padding-bottom: 0px;
     margin-bottom: 0px;
     border-bottom: none;
 }
 ul li i{
-    cursor: pointer;
+    pointer-events: none;
     color: #999;
 }
 ul .word p{
